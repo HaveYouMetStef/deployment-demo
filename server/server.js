@@ -8,8 +8,12 @@
  app.use(express.json());
 
  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"))
+    res.sendFile(path.join(__dirname, "../public/index.html"))
  })
+//  if you want heroku to see css, you must create another end point
+app.get("/styles", function(req,res) {
+    res.sendFile(path.join(__dirname, "../public/index.css"))
+})
 
  const port = process.env.PORT || 4005;
 
