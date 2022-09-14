@@ -7,16 +7,25 @@
  app.use(cors());
  app.use(express.json());
 
- app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
- })
-//  if you want heroku to see css, you must create another end point
-app.get("/styles", function(req,res) {
-    res.sendFile(path.join(__dirname, "../public/index.css"))
-})
+ 
+ //  Middleware
+//      
+ app.use(express.static(path.join(__dirname, "../public")))
+ 
+ // Endpoints
+ //  if you want heroku to see css, you must create another end point
+//  app.get("/", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public"))
+//  })
+//  app.get("/", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+//  })
+// app.get("/styles", function(req,res) {
+//     res.sendFile(path.join(__dirname, "../public/index.css"))
+// })
 
- const port = process.env.PORT || 4005;
+//  const port = process.env.PORT || 4005;
 
- app.listen(port, () => {
-    console.log(`We are vibin on port ${port}`);
- })
+//  app.listen(port, () => {
+//     console.log(`We are vibin on port ${port}`);
+//  })
