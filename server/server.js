@@ -25,8 +25,8 @@
 //     res.sendFile(path.join(__dirname, "../public/index.css"))
 // })
 
-//  const port = process.env.PORT || 4005;
+ const port = process.env.PORT || 4005;
 
-//  app.listen(port, () => {
-//     console.log(`We are vibin on port ${port}`);
-//  })
+ app.listen(port, () => {
+    console.log(`We are vibin on port ${port}`);
+ })
